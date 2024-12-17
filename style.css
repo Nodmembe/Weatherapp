@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-weight: 800;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    background: url(assets/bg.jpg);
+    width: 100%;
+    height: 100dvh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    background: rgb(0, 0, 0, 0.15);
+} 
+/*utilities*/
+.regular-txt{
+    font-weight: 600;
+}
+/*end utilities*/
+.main-container { 
+    width: 100%;
+    height: 550px;
+    z-index: 1;
+    border-radius: 12px;
+    background: transparent; 
+    padding: 08px;
+}
+/* input container */
+/* Fix input container */
+.input-container {
+    position: relative;
+    width: 100%; /* Allow it to take full width for better responsiveness */
+    max-width: 300px; /* Limit max width */
+    margin-left: 18px auto; /* Center the search bar */
+}
+
+/* Fix the input field */
+.city-input {
+    width: 100%; /* Full width inside the container */
+    padding: 10px 16px;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    background: rgba(0, 0, 0, 0.15);
+    outline: none;
+    font-weight: 500;
+    padding-right: 50px; /* Space for the search button */
+    color: white;
+    transition: border 0.25s;
+}
+
+.city-input:focus {
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.city-input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Search button */
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+}
+
+.search-btn .material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* Dropdown styling for location suggestion and search history */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    padding: 12px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#searchHistory .dropdown-item {
+    border-bottom: none;
+}
+
+
+/* end input container */
+/* weather section*/
+.weather-info{
+display: flex;
+flex-direction: column;
+gap: 25px;
+}
+.location-date-container {
+    display: flex;
+    flex-direction: column; /* Stack date on top of location */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    position: absolute;
+    top: 160px;
+    left: 10px;
+}
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.location .material-symbols-outlined {
+    font-size: 55px;
+}
+.location h4{
+    font-size: 35px;
+}
+.weather-summary-container{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 65px;
+    bottom: 160px;
+}
+.weather-summary-img{
+   width: 360px;
+   height: 600px; 
+}
+.weather-summary-info{
+    text-align: end;
+}
+
+.weather-conditions-container {
+    display: flex;
+    gap: 180px; /* Set space between items */
+    padding-top: 260px;
+    margin-left: 210mm; /* Adjust as needed to move it to the right */
+}
+
+
+.condition-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.condition-item span {
+    font-size: 40px;
+}
+
+
+.forecast-items-container{
+    display: flex;
+    gap:5px;
+}
+
+.forecast-item{
+    min-width: 50px;
+    background: rgb(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0ms0.3s background;
+}
+.forecast-item:hover {
+    background: rgb(255, 255, 255, 0.15);
+}
+.forecast-item-img{
+    width: 90px;
+    height: 70px;
+}
+/* end weather section*/
+
+/* section message */
+.section-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+.section-message img{
+    height: 350px;
+    width: fit-content;
+}
+/* end section message */
+
+/* Footer styling */
+footer {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+/* Footer links aligned to the left */
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Copyright aligned to the right */
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    text-align: right;
+}
